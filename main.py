@@ -1,6 +1,7 @@
 from ArraysAndHashing import ArraysAndHashing
 from BinarySearch import BinarySearch
 from TwoPointers import TwoPointers
+from SlidingWindow import SlidingWindow
 
 if __name__ == '__main__':
     p1 = ArraysAndHashing()
@@ -18,8 +19,14 @@ if __name__ == '__main__':
     ####################################################################################################################
 
     p2 = TwoPointers()
-
     case1 = "A man, a plan, a canal: Panama"
+    p2.isPalindrome(case1)
+
+    ####################################################################################################################
+
+    p3 = SlidingWindow()
+    case1 = [7, 1, 5, 3, 6, 4]
+    p3.maxProfit(case1)
 
     ####################################################################################################################
 

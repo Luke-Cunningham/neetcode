@@ -32,7 +32,19 @@ class ArraysAndHashing:
         :rtype: List[int]
         """
 
+        # O(n^2)
         for i,x in enumerate(nums):
             for j,y in enumerate(nums):
                 if x + y == target and i != j:
                     return i,j
+
+        # O(n)
+        if len(nums) <= 1:
+            return False
+
+        complements = {}
+        for i, num in enumerate(nums):
+            if num in complements:
+                return [complements[num], i]
+            else:
+                complements[target - num] = i

@@ -1,3 +1,4 @@
+
 class BinarySearch:
 
     def search(self, nums, target):

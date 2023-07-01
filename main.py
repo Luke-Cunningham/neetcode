@@ -2,6 +2,7 @@ from ArraysAndHashing import ArraysAndHashing
 from BinarySearch import BinarySearch
 from TwoPointers import TwoPointers
 from SlidingWindow import SlidingWindow
+from Stack import Stack
 
 if __name__ == '__main__':
     p1 = ArraysAndHashing()
@@ -30,4 +31,7 @@ if __name__ == '__main__':
 
     ####################################################################################################################
 
+    p4 = Stack()
+
+    ####################################################################################################################
     p5 = BinarySearch()

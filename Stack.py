@@ -53,3 +53,36 @@ class MinStack(object):
         :rtype: int
         """
         return self.stack[-1][1]
+
+class Solution(object):
+    def isValidSudoku(self, board):
+        """
+        :type board: List[List[str]]
+        :rtype: bool
+        """
+        return self.rowCheck(board) and self.colCheck(board) and self.subSquareCheck(board)
+
+
+    def rowCheck(self, board):
+        for row in board:
+            if not self.listCheck(row):
+                return False
+        return True
+
+    def colCheck(self, board):
+        for col in zip(*board):
+            if not self.listCheck(col):
+                return False
+        return True
+
+    def subSquareCheck(self, board):
+        for i in range(0, 9, 3):
+            for j in range(0, 9, 3):
+                subSquare = [board[x][y] for x in range(i, i + 3) for y in range(j, j + 3)]
+                if not self.listCheck(subSquare):
+                    return False
+        return True
+
+    def listCheck(self, listToCheck):
+        listToCheck = [i for i in listToCheck if i != '.']
+        return len(listToCheck) == len(set(listToCheck))
